@@ -109,3 +109,10 @@ else{
 }
 
 client.login(token);
+
+console.log("This is a check for a proper github merge");
+
+client.once("ready", () => {
+    rolecoinflip();
+    heightrandomizer();
+});
