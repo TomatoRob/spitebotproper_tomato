@@ -96,12 +96,12 @@ console.log(coinflip);
 
 if (coinflip % 2 === 0){
     role.setPosition(roleposition - 3);
-    channel.send("Coinflip! <@101091977889615872> has won today!");
+    channel.send("Coinflip! Apple has won today!");
  }
 
 else if (coinflip % 2 != 0){
     role.setPosition(roleposition - 4);
-    channel.send("Coinflip! <@536268187365539840> has won today!");
+    channel.send("Coinflip! Glados has won today!");
  }
 
 else{
@@ -110,7 +110,3 @@ else{
 }
 
 client.login(token);
-
-client.once('ready', () => {
-    heightrandomizer();
-});
