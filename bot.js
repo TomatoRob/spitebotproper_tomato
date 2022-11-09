@@ -92,6 +92,7 @@ const mrole = guild.roles.cache.get('843752270704279592');
 const channel = client.channels.cache.get('843679445109440535');
 var roleposition = mrole.position;
 var coinflip = getRandomIntInclusive(1,100);
+console.log(coinflip);
 
 if (coinflip % 2 === 0){
     role.setPosition(roleposition - 3);
@@ -109,3 +110,7 @@ else{
 }
 
 client.login(token);
+
+client.once('ready', () => {
+    heightrandomizer();
+});
