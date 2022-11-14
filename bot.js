@@ -77,7 +77,7 @@ function vcmembersweep(){
     }
          const memberString = `${formattedmemberArray.join()} go the fuck to sleep`;
          if(memberString === ' go the fuck to sleep'){
-         channel.send(`Wow, everyone's asleep. Good Job`);
+         console.log('Nobody in VC')
           }
          else {
      channel.send(memberString);
