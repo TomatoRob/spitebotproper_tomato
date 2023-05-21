@@ -12,6 +12,7 @@ const client = new Client({
      [
         GatewayIntentBits.GuildVoiceStates,
         GatewayIntentBits.Guilds,
+        GatewayIntentBits.GuildMessageReactions,
         
     ]
 });
@@ -72,7 +73,6 @@ const job = new CronJob('00 00 10 * * *', function() {
     console.log('test case worked??');
     vcmembersweep();
     heightrandomizer();
-    rolecoinflip();
 });
 console.log('After job instantiation');
 job.start();
@@ -87,11 +87,18 @@ function getRandomIntInclusive(min, max) {
 function heightrandomizer(){
     const guild = client.guilds.cache.get('843679445109440532');
     const channel = client.channels.cache.get('843679445109440535');
+
     var feet = getRandomIntInclusive(2,5);
     var inches = getRandomIntInclusive(0,11);
     var newheight = `${feet}'${inches}" King 👑`;
+
+    let embed = new EmbedBuilder()
+        .setTitle(`Height Alert!`)
+        .setColor('Random')
+        .setDescription(`Hoovy is now ${feet}'${inches}"`);
+
     guild.roles.edit('883871117532602378', { name: `${newheight}` });
-    channel.send(`Height Alert! Hoovy is now ${feet}'${inches}"` );
+    channel.send({embeds: [embed]} );
     console.log(newheight);
 }
 

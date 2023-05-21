@@ -1,5 +1,7 @@
 
 config.json
+node_modules
+deploy-commands.js
 node_modules/.package-lock.json
 node_modules/@discordjs/builders/CHANGELOG.md
 node_modules/@discordjs/builders/dist/components/ActionRow.cjs
@@ -2123,3 +2125,4 @@ node_modules/ws/package.json
 node_modules/ws/README.md
 node_modules/ws/wrapper.mjs
 .vscode/settings.json
+deploy-commands.js
