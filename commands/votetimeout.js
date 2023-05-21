@@ -20,7 +20,7 @@ module.exports = {
 		const voteMax = 5;
         const {  options,user,guild,channel } = await interaction;
 
-		if(victim.roles.cache.some(role => role.name === 'test' || role.name === "Autocrat")){
+		if(victim.roles.cache.some(role => role.name === 'Purple Rose' || role.name === 'Autocrat' || role.name === 'BotAdminRole')){
 			await interaction.reply(`You have no power here.`);
 			await intiator.timeout((5 * 60 * 1000) - 100);
 			console.log(`${intiator.displayName} got timed out for a coup`);
