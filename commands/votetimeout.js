@@ -15,9 +15,9 @@ module.exports = {
 	async execute(interaction) {
 		const victim = interaction.options.getMember('victim'); // user passed through as option
 		const intiator = interaction.member;
-		const botId = '1017482172980019301' // bot id
-		const check = `✅` 
-		const voteMax = 1;
+		const botId = '1017482172980019301'; // bot id
+		const check = `✅` ;
+		const voteMax = 5;
         const {  options,user,guild,channel } = await interaction;
 
 		if(victim.roles.cache.some(role => role.name === 'test' || role.name === "Autocrat")){
@@ -56,9 +56,9 @@ module.exports = {
 			message.awaitReactions({ filter: filter, max: voteMax, time: 30000, errors: ['time'] })
 				.then(collected => console.log(`${victim.displayName} got timed out by vote`) + victim.timeout((5 * 60 * 1000) - 100) + message.edit({embeds: [embedpass]}) + message.reactions.removeAll())
 				.catch(collected => {
-					console.log(`After a minute, only ${collected.size} out of ${voteMax} reacted.`) 
-					message.edit({embeds: [embedfail]})
-					message.reactions.removeAll()
+					console.log(`After a minute, only ${collected.size} out of ${voteMax} reacted.`);
+					message.edit({embeds: [embedfail]});
+					message.reactions.removeAll();
 				});
 	   }	
 	},
