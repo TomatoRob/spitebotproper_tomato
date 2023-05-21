@@ -20,12 +20,13 @@ module.exports = {
 		const voteMax = 5;
         const {  options,user,guild,channel } = await interaction;
 
-		if(victim.roles.cache.some(role => role.name === 'Purple Rose' || role.name === 'Autocrat' || role.name === 'BotAdminRole')){
+		if(victim.roles.cache.some(role => role.name === 'Purple Rose' || role.name === 'Autocrat' || role.name === 'BotAdminRole' && intiator.roles.cache.some(role => role.name === 'Purple Rose' || role.name === 'Autocrat' || role.name === 'BotAdminRole'))){
+			await interaction.reply('An akward conflict of interest');
+		} else if(victim.roles.cache.some(role => role.name === 'Purple Rose' || role.name === 'Autocrat' || role.name === 'BotAdminRole')){
 			await interaction.reply(`You have no power here.`);
 			await intiator.timeout((5 * 60 * 1000) - 100);
 			console.log(`${intiator.displayName} got timed out for a coup`);
-		}
-		else{
+		} else{
 			await interaction.deferReply();
 			let embed = new EmbedBuilder()
 				.setTitle(`Should ${victim.displayName} be timed out for 5 minutes`)
