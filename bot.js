@@ -1,6 +1,6 @@
 const path = require('node:path');
 const { token } = require('./config.json');
-const { Client, GatewayIntentBits, Collection } = require('discord.js');
+const { Client, GatewayIntentBits, Collection,EmbedBuilder,Events } = require('discord.js');
 const fs = require('node:fs');
 const CronJob = require('./node_modules/cron/lib/cron.js').CronJob;
 
@@ -150,6 +150,5 @@ else{
  console.log('Failure on Coinflip');
  }
 }
-
 //this is a test
 client.login(token);
